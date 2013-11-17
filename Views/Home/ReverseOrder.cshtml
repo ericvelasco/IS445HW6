@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "IS 445 Homework 6: Task 2";
+}
+
+<h2>Task Two</h2>
+<div id="div">
+    <label for="textbox">Please enter a phrase: </label>
+    <input type="text" id="textbox" name="textbox" />
+    <input type="submit" name="submit" value="submit" onClick="reversePhrase()"/>
+</div>
+
+<script type="text/javascript">
+    function reversePhrase() {
+        if (document.getElementById("textbox").value == "") {
+            document.getElementById("div").innerHTML = "Input is empty. Please try again.";
+        } else {
+            var phrase = document.getElementById("textbox").value;
+            var outputArray = phrase.split(" ");
+            var output = "";
+            outputArray = outputArray.reverse();
+            for (var i = 0; i < outputArray.length; i++) {
+                output = output + outputArray[i] + " ";
+            }
+            document.getElementById("div").innerHTML = "Your phrase in reverse order is: " + output;
+        }
+    }
+</script>
